@@ -24,22 +24,14 @@
   <script>
     //set css/js links with random string for caching issues prevention
     var csshref = 'css/css.css';
-    var jshref = 'js/js.js';
+    var jshref = 'js/main.js';
     var date = new Date().getTime();
     $('<link>', {
       rel: "stylesheet",
       type: "text/css",
       href: csshref + "?" + date,
-      func: function() {
-        console.log($(this))
-      }
     }).appendTo($('head'));
-    $('<script>', {
-      src: jshref + '?' + date,
-      func: function() {
-        console.log($(this))
-      }
-    }).appendTo($('body'));
+    $.getScript(jshref);
   </script>
 
   <body>
